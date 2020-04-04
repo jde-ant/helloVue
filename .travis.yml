@@ -2,6 +2,7 @@ language: node_js
 
 script:
   - cd $TRAVIS_BUILD_DIR/hello
+  - npm install -g @vue/cli
   - npm run build
 
 deploy:
