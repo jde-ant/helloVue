@@ -1,4 +1,14 @@
 language: node_js
+
 script:
   - cd $TRAVIS_BUILD_DIR/hello
-  - ls -la
+  - npm run build
+
+deploy:
+  skip_cleanup: true
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: jordeant.ninja
+  region: $AWS_REGION
+  local_dir: dist
