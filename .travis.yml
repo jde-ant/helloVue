@@ -2,10 +2,6 @@ language: node_js
 node_js:
   - v10.11.0
 
-install:
-  - cd $TRAVIS_BUILD_DIR/hello
-  - npm install
-
 script:
   - cd $TRAVIS_BUILD_DIR/hello
   - npm run build
