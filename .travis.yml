@@ -1,5 +1,8 @@
 language: node_js
 
+install:
+  - cd $TRAVIS_BUILD_DIR/hello
+  - npm install
 script:
   - cd $TRAVIS_BUILD_DIR/hello
   - npm run build
@@ -11,4 +14,4 @@ deploy:
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: jordeant.ninja
   region: $AWS_REGION
-  local_dir: dist
+  local_dir: $TRAVIS_BUILD_DIR/hello/dist
