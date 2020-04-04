@@ -1,8 +1,5 @@
 language: node_js
 
-install:
-  - cd $TRAVIS_BUILD_DIR/hello
-  - npm install
 script:
   - cd $TRAVIS_BUILD_DIR/hello
   - npm run build
