@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/rat2.jpg">
-    <HelloWorld msg="Hello niño Rata"/>
+    <HelloWorld msg="Hello World"/>
+    <span>Jorge's personal page{{ msg }}</span>
   </div>
 </template>
 
