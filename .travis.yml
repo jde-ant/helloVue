@@ -18,3 +18,5 @@ deploy:
   bucket: jordeant.ninja
   region: $AWS_REGION
   local_dir: $TRAVIS_BUILD_DIR/hello/dist
+  on:
+    branch: master
