@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Personal photo" src="./assets/jor_small.png">
+    <img alt="Personal photo" src="./assets/jor.gif">
     <HelloWorld msg="Hello World"/>
     <span>Work in progress...{{ msg }}</span>
   </div>
