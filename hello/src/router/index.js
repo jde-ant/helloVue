@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Bio from "@/views/Bio.vue";
+import Home from "@/views/Home.vue";
 
 Vue.use(VueRouter);
 
@@ -8,15 +8,20 @@ const routes = [
   {
     path: "/",
     name: "home",
+    component: Home,
   },
   {
     path: "/bio",
     name: "bio",
-    component: Bio,
+    component: () => import("@/views/Bio.vue"),
   },
   {
     path: "/projects",
     name: "projects",
+  },
+  {
+    path: "/contact",
+    name: "contact",
   },
 ];
 
