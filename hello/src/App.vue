@@ -1,29 +1,60 @@
 <template>
-  <div id="app">
-    <img alt="Personal photo" src="./assets/jor.gif">
-    <HelloWorld msg="Hello World"/>
-    <span>Work in progress...{{ msg }}</span>
-  </div>
+  <v-app>
+    <v-app-bar app color="teal" dark>
+      <v-toolbar-title class="text-center">Welcome to Jorge's personal page!</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn
+        v-for="link in links"
+        :key="`${link.label}-header-link`"
+        text
+        rounded
+        :to="link.url"
+      >{{ link.label }}</v-btn>
+    </v-app-bar>
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+    <v-footer color="teal darken-3" padless>
+      <v-row justify="center" no-gutters>
+        <v-btn
+          v-for="link in links"
+          :key="`${link.label}-footer-link`"
+          color="white"
+          text
+          rounded
+          :to="link.url"
+        >{{ link.label }}</v-btn>
+        <v-col class="teal lighten-2 py-4 text-center white--text" cols="12">
+          {{ new Date().getFullYear() }} —
+          <strong>Jorge de Antonio</strong>
+        </v-col>
+      </v-row>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data: () => ({
+    links: [
+      {
+        label: "Home",
+        url: "/"
+      },
+      {
+        label: "Bio",
+        url: "/bio"
+      },
+      {
+        label: "Projects",
+        url: "/projects"
+      },
+      {
+        label: "Contact",
+        url: "/contact"
+      }
+    ]
+  })
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
