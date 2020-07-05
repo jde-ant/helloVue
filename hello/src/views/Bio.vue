@@ -1,5 +1,5 @@
 <template>
-  <div>HOLA HOLA THIS IS MY BIO</div>
+  <div>TODO</div>
 </template>
 
 <script>
